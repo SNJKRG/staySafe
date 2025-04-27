@@ -221,6 +221,16 @@ nav img{
     gap: 64px;
 }
 
+#secure1{
+    width: 704px; height: auto;
+}
+
+#secure2{
+    width: 320px; 
+    height: auto; 
+    margin-top: auto;
+}
+
 .security h4{
     margin: 0;
 }
@@ -236,6 +246,16 @@ nav img{
 
 .opps h4{
     margin: 0;
+}
+
+#opps1{
+    width: 320px; 
+    height: 455px;
+}
+
+#opps2{
+    width: 704px; 
+    height: 455px;
 }
 
 .adv-header{
@@ -475,4 +495,204 @@ nav img{
 
 .footer-info > * {
     margin: 0;
+}
+
+/* ===== АНИМАЦИИ ПОЯВЛЕНИЯ ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Применяем анимацию к секциям */
+section {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+/* Плавная задержка для красивого появления */
+.introduction {
+    animation-delay: 0.2s;
+}
+.about {
+    animation-delay: 0.4s;
+}
+.security {
+    animation-delay: 0.6s;
+}
+#opportunities {
+    animation-delay: 0.8s;
+}
+.adv-header, .adv-carousel {
+    animation-delay: 1s;
+}
+#stages {
+    animation-delay: 1.2s;
+}
+footer {
+    animation-delay: 1.4s;
+}
+
+/* ===== КНОПКИ НАВЕДЕНИЕ ===== */
+button, .introduction-button, .adv-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover, .introduction-button:hover, .adv-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(195, 176, 145, 0.4);
+}
+
+/* ===== ССЫЛКИ В НАВБАРЕ ===== */
+.nav-links a {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #C3B091 0%, #564042 100%);
+    transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===== КАРТОЧКИ АНИМАЦИЯ НАВЕДЕНИЯ ===== */
+.adv-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.adv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ===== АККОРДЕОН CSS ===== */
+/* Изменим cursor */
+.accordion-header {
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Мягкое открытие текста */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+/* Псевдоактивное состояние (сделать по ховеру, так как без JS нельзя нажатием) */
+.accordion-item:hover .accordion-content {
+    max-height: 200px;
+    padding: 10px 0;
+}
+
+/* ===== ИЗОБРАЖЕНИЯ ПАРАЛЛАКС НАВЕДЕНИЕ ===== */
+.about-images img, .security img, .opps img {
+    transition: transform 0.5s ease;
+}
+
+.about-images img:hover, .security img:hover, .opps img:hover {
+    transform: scale(1.03);
+}
+
+
+/* Ключевая анимация */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Применяем ко всем секциям */
+  section {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  /* Задаём задержки по порядку */
+  .introduction   { animation-delay: 0.2s; }
+  .about          { animation-delay: 0.4s; }
+  #security       { animation-delay: 0.6s; }
+  #opportunities { animation-delay: 0.8s; }
+  .adv-header, .adv-carousel { animation-delay: 1.0s; }
+  #stages         { animation-delay: 1.2s; }
+  footer          { animation-delay: 1.4s; }
+
+  
+  /* подчёркиваем при hover */
+h1:hover, h2:hover, h3:hover, h4:hover{
+  text-decoration: underline;
+  text-decoration-color: #C3B091;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.3s ease;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .introduction-info{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:60px
+    }
+    .about-center{
+        width: 510px;
+    }
+    #secure1{
+        width: 504px;
+    }
+    #secure2{
+        width: 220px;
+    }
+    #opps1{
+        width: 220px;
+    }
+    #opps2{
+        width: 504px;
+    }
+    .adv-header{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .adv-card{
+        height: 324px;
+        width: 170px !important;
+        flex: none;
+    }
+    .contact-info{
+        width: 45%;
+      }
+    .adv-carousel{
+        display: flex;
+        flex-direction: row;
+        gap: 36px;
+        padding: 32px;
+    }
+    #connect{
+        width: 130px;
+        height: auto;
+        align-self: center;
+    }
 }

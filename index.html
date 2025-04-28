@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stay Safe</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/images/Logotype.png" type="image/png" />
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -23,8 +23,8 @@
         </nav>
         <div class="introduction-info">
             <div class="introduction-text">
-                <h1 style="color: var(--Text-Secondary-Light-grey-mother-of-pearl, #9C9C9C);">КОМФОРТНОЕ <span style="color: var(--Text-Primary-White, #FFF);"> УКРЫТИЕ</span></h1>
-                <h1 style="color: var(--Text-Primary-White, #FFF); margin-left: auto;">ПРЕМИУМ <span style="color: var(--Text-Secondary-Light-grey-mother-of-pearl, #9C9C9C);">КЛАССА</span> </h1>
+                <h1 style="color: var(--Text-Secondary-Light-grey-mother-of-pearl, #9C9C9C);">КОМФОРТНОЕ <span class="mobile-break" style="color: var(--Text-Primary-White, #FFF);"> УКРЫТИЕ</span></h1>
+                <h1 id="specialh1" style="color: var(--Text-Primary-White, #FFF)">ПРЕМИУМ <span style="color: var(--Text-Secondary-Light-grey-mother-of-pearl, #9C9C9C);"> КЛАССА</span> </h1>
                 <h1 style="color: var(--Text-Secondary-Light-grey-mother-of-pearl, #9C9C9C);">ПОД КЛЮЧ</h1>
             </div>
             <a>
@@ -49,8 +49,8 @@
                 <button>Консультация</button>
             </div>
             <div class="about-images">
-                <img src="assets/images/1.png" alt="Image 1" style="width: 29%; height: auto;">
-                <img src="assets/images/2.png" alt="Image 2" style="width: 64%; height: auto;">
+                <img src="assets/images/1.png" alt="Image 1" style="width: 29%; height: auto;" id="aboutImg1">
+                <img src="assets/images/2.png" alt="Image 2" style="width: 64%; height: auto;" id="aboutImg2">
             </div>
         </div>
     </section>
@@ -82,9 +82,10 @@
     <section>
         <div class="adv-header">
             <h3 style="color: #FFF; margin: 0;">Преимущества</h3>
-            <span style="width: 1088px; display: flex; flex-direction: column; ">
+            <span class= "adv-span">
                 <h2 style="color: #909090;">НА ВСЕХ ЭТАПАХ СОТРУДНИЧЕСТВА НАД ПРОЕКТОМ</h2>
-                <h2 style="color: #FFF; margin-left: auto;">МЫ ГАРАНТИРУЕМ НАШИМ КЛИЕНТАМ</h2>
+                <h2 class="adv-span-left"
+                >МЫ ГАРАНТИРУЕМ НАШИМ КЛИЕНТАМ</h2>
             </span>
         </div>
         <div class="adv-carousel">
@@ -121,8 +122,10 @@
             <div class="accordion-item">
               <div class="accordion-header">
                 <span class="accordion-text">Этап 1</span>
-                <span class="accordion-title">Формирование заявки</span>
-                <img src="assets/icons/Plus.svg" class="accordion-toggle">
+                <div class="accordion-mobile">
+                  <span class="accordion-title">Формирование заявки</span>
+                  <img src="assets/icons/Plus.svg" class="accordion-toggle">
+                </div>
               </div>
               <div class="accordion-content">
                 На этом этапе мы консультируем вас по поводу строительства персонального убежища, 
@@ -132,8 +135,10 @@
             <div class="accordion-item">
                 <div class="accordion-header">
                   <span class="accordion-text">Этап 2</span>
-                  <span class="accordion-title">Определение места</span>
-                  <img src="assets/icons/Plus.svg" class="accordion-toggle">
+                  <div class="accordion-mobile">
+                    <span class="accordion-title">Определение места</span>
+                    <img src="assets/icons/Plus.svg" class="accordion-toggle">
+                  </div>
                 </div>
                 <div class="accordion-content">
                   На этом этапе мы консультируем вас по поводу строительства персонального убежища, 
@@ -202,13 +207,15 @@
             <div class="contact-info">
                 <h3 style="color: #909090; margin: 0;">Контакты</h3>
                 <h1 style="color: #FFF;">Как <span class="class-special">связаться</span> с нами?</h1>
-                <h3 style="color: #FFF;">Наша команда детально проработает с вами каждый аспект проекта - от проектирования до строительства. 
+                <div class="contact-mobile">
+                  <h3 style="color: #FFF;">Наша команда детально проработает с вами каждый аспект проекта - от проектирования до строительства. 
                     Мы гарантируем полную конфиденциальность и индивидуальный подход к каждой задаче, что является основой 
                     нашей философии.</h3>
                 <h3 style="color: #FFF;">Для реализации проекта на вашей территории заполните форму обратной связи.
                      Наш менеджер свяжется с вами в течение рабочего дня для консультации и обсуждения следующих шагов.</h3>
                 <h3 style="color: #FFF;">Телефон</h3>
                 <h3 style="color: #909090;">+7 (911) 500-55-55</h3>
+                </div>
             </div>
             <form action="#thanks" method="get">
                 <h2 style="margin: 0;">Консультация</h2>

@@ -15,6 +15,21 @@ accordionItems.forEach(item => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const img1 = document.getElementById('aboutImg1');
+    const img2 = document.getElementById('aboutImg2');
+
+    img1.addEventListener('click', () => {
+        img1.style.display = 'none';
+        img2.style.display = 'block';
+    });
+
+    img2.addEventListener('click', () => {
+        img2.style.display = 'none';
+        img1.style.display = 'block';
+    });
+});
+
 // Отправка формы
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');

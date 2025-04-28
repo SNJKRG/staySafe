@@ -324,6 +324,15 @@ nav img{
     flex-shrink: 0;
     align-self: stretch;
 }
+.adv-span{
+    width: 1088px; 
+    display: flex;
+    flex-direction: column;
+}
+.adv-span-left{
+    margin-left: auto;
+    color: #FFF;
+}
 
 #stages{
     padding: 32px;
@@ -546,6 +555,8 @@ button, .introduction-button, .adv-button {
 button:hover, .introduction-button:hover, .adv-button:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(195, 176, 145, 0.4);
+    background: linear-gradient(90deg, #B1A296 0%, #574A3F 100%);
+    background-blend-mode: luminosity;
 }
 
 /* ===== ССЫЛКИ В НАВБАРЕ ===== */
@@ -597,11 +608,6 @@ button:hover, .introduction-button:hover, .adv-button:hover {
     transition: max-height 0.5s ease, padding 0.3s ease;
 }
 
-/* Псевдоактивное состояние (сделать по ховеру, так как без JS нельзя нажатием) */
-.accordion-item:hover .accordion-content {
-    max-height: 200px;
-    padding: 10px 0;
-}
 
 /* ===== ИЗОБРАЖЕНИЯ ПАРАЛЛАКС НАВЕДЕНИЕ ===== */
 .about-images img, .security img, .opps img {
@@ -651,7 +657,7 @@ h1:hover, h2:hover, h3:hover, h4:hover{
 
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width:961px) and (max-width: 1200px) {
     .introduction-info{
         flex-direction: column;
         align-items: flex-start;
@@ -695,4 +701,235 @@ h1:hover, h2:hover, h3:hover, h4:hover{
         height: auto;
         align-self: center;
     }
+}
+
+@media screen and (orientation: portrait) and (max-width: 960px) {
+    body{
+        padding: 16px 0;
+    }    
+    .introduction{
+        padding: 16px;
+    }
+    .nav-links{
+        display: none;
+    }
+    h1{
+        font-size: 36px;
+    }
+    h2{
+        font-size: 24px;
+    }
+    .introduction-info{
+        width: 100%;
+        flex-direction: column;
+        gap:60px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 16px;
+    }
+    .introduction-text{
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: wrap;
+    }
+    .introduction-text h1{
+        flex-wrap: wrap;    
+        margin-left: 0;
+        column-gap: 0px;
+        row-gap: 0px;
+        margin-right: 10px;
+    }
+    #specialh1{
+        margin-left: auto;
+    }
+    .about{
+        padding: 16px;
+        width: 100%;
+        flex-direction: column;
+        gap: 32px;
+        justify-content: center;
+    }
+    .about h3{
+        text-wrap: none;
+        width: fit-content
+    }
+    .about-content{
+        width: 95%;
+    }
+    .about-content h2{
+        margin: 0;
+    }
+    .about-center{
+        width: 95%;
+        margin-top: 16px;
+        justify-content: center;
+    }
+    #specialh1{
+        margin-left: 0;
+        gap: 10px;
+    }
+    .about-center button{
+        margin: 48px auto;
+    }
+
+    #aboutImg1, #aboutImg2 {
+        cursor: pointer;
+        height: 450px;
+        flex: 1 0 0;
+    }
+
+    #aboutImg1 {
+        display: block;
+    }
+
+    #aboutImg2 {
+        display: none;
+    }
+    #security{
+        padding: 0 16px;
+    }
+    .security{
+        height: auto;
+        flex-direction: column;
+        gap: 32px;
+        justify-content: center;
+    }
+    #secure1{
+        margin: 0 auto;
+        width: 95%;
+        height: auto;
+    }
+    #secure2{
+        display: none;
+    }
+    .opps{
+        flex-direction: column;
+        height: auto;
+        gap: 32px;
+        justify-content: center;
+    }
+    .opps h4{
+        margin-right: 60px;
+    }
+    #opps1{
+        display: none;
+    }
+    #opps2{
+        margin: 0 auto;
+        width: 95%;
+        height: auto;
+    }
+    .adv-header{
+        padding: 0 16px;
+        flex-direction: column;
+    }
+    .adv-card{
+        width: 320px;
+        height: 360px !important;
+    }
+    .adv-carousel{
+        gap: 24px;
+    }
+    .adv-span{
+        width: 100vw;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .adv-span-left{
+        margin-left: 0;
+    }
+
+    .adv-carousel {
+        display: flex;
+        gap: 16px; /* расстояние между карточками */
+        overflow-x: auto; /* горизонтальная прокрутка */
+        scroll-snap-type: x mandatory; /* прилипание к карточкам */
+        -webkit-overflow-scrolling: touch; /* плавная прокрутка на iOS */
+        padding-bottom: 16px; /* чтобы палец не перекрывал контент */
+      }
+      
+      .adv-card {
+        flex: 0 0 auto; /* запретить ужимание карточек */
+        scroll-snap-align: start; /* прилипаем в начало */
+        min-width: 280px; /* минимальная ширина карточки */
+        max-width: 80%; /* чтобы карточки были не слишком широкими */
+      }
+
+      .adv-carousel::-webkit-scrollbar {
+        display: none;
+      }
+      
+      #stages h3{
+        margin-top: 0;
+        font-family: Inter;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 25.2px */
+      }
+      .accordion-text{
+        align-items: flex-start;
+      }
+      .accordion-title {
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        }
+
+        /* Псевдоактивное состояние (сделать по ховеру, так как без JS нельзя нажатием) */
+        .accordion-item:hover .accordion-content {
+            max-height: 200px;
+            padding: 10px 0;
+        }
+        .accordion-header{
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-start
+        }
+        .accordion-mobile{
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            gap: 64px
+        }
+        .accordion-toggle{
+            display: none;
+        }
+        .contact-content{
+            flex-direction: column-reverse;
+        }
+        form{
+            width: fit-content;
+            padding: 32px 16px;
+        }
+        footer{
+            padding: 0;
+        }
+        .contact-info{
+            padding: 32px;
+            width: 90%;
+        }
+        .contact-mobile{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .footer-info{
+            flex-direction: column;
+            justify-content: center;
+            gap:24px
+        }
+        .footer-nav{
+            flex-direction: column;
+        }
+        .footer-nav h4{
+            margin: 0;
+        }
+        .footer-info h4{
+            margin-bottom: 12px;
+        }
 }

@@ -802,6 +802,9 @@ h1:hover, h2:hover, h3:hover, h4:hover{
     #secure2{
         display: none;
     }
+    #opportunities{
+        padding: 0 16px;
+    }
     .opps{
         flex-direction: column;
         height: auto;

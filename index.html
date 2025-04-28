@@ -17,7 +17,7 @@
                     <li><a href="#about">О компании</a></li>
                     <li><a href="#security">Безопасность</a></li>
                     <li><a href="#contact">Контакты</a></li>
-                    <li><a href="#contact"><span style="display: flex; flex-direction: row; gap: 4px; align-items: center;"><img src="assets/icons/phone.svg" alt="Phone Icon" style="height: 24px; width: 24px;">+7 (928) 678-56-98</span></a></li>
+                    <li><a href="#"><span style="display: flex; flex-direction: row; gap: 4px; align-items: center;"><img src="assets/icons/phone.svg" alt="Phone Icon" style="height: 24px; width: 24px;">+7 (928) 678-56-98</span></a></li>
                 </ul>
             </div>
         </nav>
@@ -28,7 +28,7 @@
                 <h1 style="color: var(--Text-Secondary-Light-grey-mother-of-pearl, #9C9C9C);">ПОД КЛЮЧ</h1>
             </div>
             <a>
-                <button class="introduction-button">
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" class="introduction-button">
                     Связаться с нами
                 </button>
             </a>
@@ -46,7 +46,7 @@
                 <h4 style="color:#909090; margin: 0;">За время работы был накоплен значительный опыт,
                     освоен полный цикл строительства и разработаны
                     эффективные методики возведения частных укрытий.</h4>
-                <button>Консультация</button>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Консультация</button>
             </div>
             <div class="about-images">
                 <img src="assets/images/1.png" alt="Image 1" style="width: 29%; height: auto;" id="aboutImg1">
@@ -112,7 +112,7 @@
             </div>
             <div class="adv-card" id="card4">
                 <img src="assets/icons/Content.svg" id="connect">
-                <button class="adv-button">Обсудить</button>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" class="adv-button">Обсудить</button>
             </div>
         </div>
     </section>
@@ -122,10 +122,8 @@
             <div class="accordion-item">
               <div class="accordion-header">
                 <span class="accordion-text">Этап 1</span>
-                <div class="accordion-mobile">
-                  <span class="accordion-title">Формирование заявки</span>
-                  <img src="assets/icons/Plus.svg" class="accordion-toggle">
-                </div>
+                <span class="accordion-title">Формирование заявки</span>
+                <img src="assets/icons/Plus.svg" class="accordion-toggle">
               </div>
               <div class="accordion-content">
                 На этом этапе мы консультируем вас по поводу строительства персонального убежища, 
@@ -135,10 +133,8 @@
             <div class="accordion-item">
                 <div class="accordion-header">
                   <span class="accordion-text">Этап 2</span>
-                  <div class="accordion-mobile">
-                    <span class="accordion-title">Определение места</span>
-                    <img src="assets/icons/Plus.svg" class="accordion-toggle">
-                  </div>
+                  <span class="accordion-title">Определение места</span>
+                  <img src="assets/icons/Plus.svg" class="accordion-toggle">
                 </div>
                 <div class="accordion-content">
                   На этом этапе мы консультируем вас по поводу строительства персонального убежища, 
@@ -222,7 +218,7 @@
                 <input placeholder="Ваше имя" id="nameInput">
                 <input placeholder="Телефон или E-mail" id="contactInput">
                 <input placeholder="Удобное время или другие пожаления" id="infoInput">
-                <button type="submit">Оставить заявку</button>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" type="submit">Оставить заявку</button>
                 <h4 style="color: #909090; margin: 0;">Отправляя форму, вы соглашаетесь с обработкой данных.</h4>
             </form>
         </div>
@@ -236,5 +232,10 @@
             <h4>Made by copy.lobby</h4>
         </div>
     </footer>
+    <div id="custom-alert" style="display:none; position:fixed; top:30%; left:50%; transform:translateX(-50%);
+    background:white; color:black; padding:20px 30px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.3); z-index:1000;">
+      <span id="alert-text"></span>
+      <button onclick="closeAlert()" style="margin-left:20px;">ОК</button>
+    </div>
 </body>
 </html>

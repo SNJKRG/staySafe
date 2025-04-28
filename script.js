@@ -16,19 +16,37 @@ accordionItems.forEach(item => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const img1 = document.getElementById('aboutImg1');
-    const img2 = document.getElementById('aboutImg2');
+    if (window.innerWidth <= 768) { // Проверяем, что это мобильное устройство
+        const img1 = document.getElementById('aboutImg1');
+        const img2 = document.getElementById('aboutImg2');
 
-    img1.addEventListener('click', () => {
-        img1.style.display = 'none';
-        img2.style.display = 'block';
-    });
+        img1.addEventListener('click', () => {
+            img1.style.display = 'none';
+            img2.style.display = 'block';
+        });
 
-    img2.addEventListener('click', () => {
-        img2.style.display = 'none';
-        img1.style.display = 'block';
-    });
+        img2.addEventListener('click', () => {
+            img2.style.display = 'none';
+            img1.style.display = 'block';
+        });
+    }
 });
+
+// Функция для показа кастомного алерта
+function showAlert(message) {
+    const alertBox = document.getElementById('custom-alert');
+    const alertText = document.getElementById('alert-text');
+
+    alertText.textContent = message;
+    alertBox.style.display = 'block';
+}
+
+// Функция для закрытия кастомного алерта
+function closeAlert() {
+    const alertBox = document.getElementById('custom-alert');
+    alertBox.style.display = 'none';
+}
+
 
 // Отправка формы
 document.addEventListener('DOMContentLoaded', () => {
@@ -45,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = messageInput.value.trim();
 
         if (!name || !contact || !message) {
-            alert('Пожалуйста, заполните все поля!');
+            showAlert('Пожалуйста, заполните все поля!');
             return;
         }
 
@@ -69,8 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             form.reset();
+            showAlert('Ваша заявка успешно отправлена!');
         } catch (error) {
             console.error('Ошибка при отправке:', error);
+            showAlert('Произошла ошибка при отправке. Попробуйте позже.');
         }
     });
 });

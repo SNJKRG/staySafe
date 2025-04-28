@@ -3,8 +3,9 @@ const accordionItems = document.querySelectorAll('.accordion-item');
 
 accordionItems.forEach(item => {
     const toggleButton = item.querySelector('.accordion-toggle');
+    const header = item.querySelector('.accordion-header');
 
-    toggleButton.addEventListener('click', (e) => {
+    function toggleAccordion(e) {
         e.stopPropagation();
         item.classList.toggle('active');
 
@@ -12,8 +13,17 @@ accordionItems.forEach(item => {
         toggleButton.src = item.classList.contains('active') 
             ? "assets/icons/Minus.svg" 
             : "assets/icons/Plus.svg";
-    });
+    }
+
+    // На все устройства: кликаем по кнопке
+    toggleButton.addEventListener('click', toggleAccordion);
+
+    // Только на мобильных устройствах: кликаем по заголовку
+    if (window.innerWidth <= 768) { // ширина для мобильных (можно настроить)
+        header.addEventListener('click', toggleAccordion);
+    }
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth <= 768) { // Проверяем, что это мобильное устройство

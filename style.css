@@ -882,12 +882,7 @@ h1:hover, h2:hover, h3:hover, h4:hover{
         font-weight: 400;
         line-height: 140%;
         }
-
-        /* Псевдоактивное состояние (сделать по ховеру, так как без JS нельзя нажатием) */
-        .accordion-item:hover .accordion-content {
-            max-height: 200px;
-            padding: 10px 0;
-        }
+        
         .accordion-header{
             flex-direction: column;
             gap: 16px;

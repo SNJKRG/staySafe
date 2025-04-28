@@ -75,13 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         try {
-            await fetch(`https://api.telegram.org/bot<TOKEN>/sendMessage`, {
+            await fetch(`https://api.telegram.org/bot7705167644:AAGA9hAxTRgSP8r9P0jrLV_zvZi200G8u8w/sendMessage`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    chat_id: '<TELEGRAM_CHAT_ID>',
+                    chat_id: '1594946238',
                     text: text
                 })
             });
